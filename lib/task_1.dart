@@ -236,12 +236,13 @@ class Task1 extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 5),
                 height: 50,
                 width: 170,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Colors.blueAccent,
-                ),
-                child: TextButton(
+                child: ElevatedButton(
                   onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.blueAccent,
+                    onPrimary: Colors.black,
+                    shape: const StadiumBorder(),
+                  ),
                   child: const Text(
                     'ホテルを予約する',
                     style: TextStyle(color: Colors.white, fontSize: 15),
