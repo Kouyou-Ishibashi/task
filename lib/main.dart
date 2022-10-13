@@ -14,15 +14,15 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-            color: Colors.white,
-            elevation: 0,
-            titleTextStyle: TextStyle(
-                color: Colors.black, fontSize: 22, fontWeight: FontWeight.bold),
-            iconTheme: IconThemeData(color: Colors.black)),
-        primaryColor: const Color(0xff6c755),
-        scaffoldBackgroundColor: Colors.white,
-      ),
+          // appBarTheme: const AppBarTheme(
+          //     color: Colors.white,
+          //     elevation: 0,
+          //     titleTextStyle: TextStyle(
+          //         color: Colors.black, fontSize: 22, fontWeight: FontWeight.bold),
+          //     iconTheme: IconThemeData(color: Colors.black)),
+          // primaryColor: const Color(0xff6c755),
+          // scaffoldBackgroundColor: Colors.white,
+          ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
