@@ -10,6 +10,7 @@ class Task1 extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Container(
+                // 背景画像設定
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     colorFilter: ColorFilter.mode(
@@ -30,6 +31,7 @@ class Task1 extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // 画像右上のアイコン設定
                     Align(
                       alignment: Alignment.centerRight,
                       child: Container(
@@ -50,6 +52,7 @@ class Task1 extends StatelessWidget {
                             ],
                           )),
                     ),
+                    // 画像左下のコメント設定
                     Align(
                         alignment: Alignment.centerLeft,
                         child: Container(
@@ -66,25 +69,24 @@ class Task1 extends StatelessWidget {
                                   ),
                                 ),
                                 const SizedBox(height: 5),
-                                Text.rich(
-                                  TextSpan(
-                                    children: [
-                                      WidgetSpan(
-                                          child: Icon(
-                                        Icons.place,
-                                        size: 16,
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.place,
+                                      size: 16,
+                                      color: Colors.white.withOpacity(0.7),
+                                    ),
+                                    Text(
+                                      'Italy',
+                                      style: TextStyle(
+                                        fontSize: 16,
                                         color: Colors.white.withOpacity(0.7),
-                                      )),
-                                      TextSpan(
-                                          text: 'Italy',
-                                          style: TextStyle(
-                                              color:
-                                                  Colors.white.withOpacity(0.7),
-                                              fontSize: 16))
-                                    ],
-                                  ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                                 const SizedBox(height: 5),
+                                // 真ん中のアイコンボタン設定
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
@@ -202,6 +204,7 @@ class Task1 extends StatelessWidget {
                     ),
                   ],
                 )),
+            // 詳細部設定
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -228,6 +231,7 @@ class Task1 extends StatelessWidget {
                 )
               ],
             ),
+            // ボタン設定
             Container(
                 margin: const EdgeInsets.only(top: 5),
                 height: 50,
