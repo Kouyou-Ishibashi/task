@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_task/task_1.dart';
+import 'package:flutter_task/task_2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,16 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          // appBarTheme: const AppBarTheme(
-          //     color: Colors.white,
-          //     elevation: 0,
-          //     titleTextStyle: TextStyle(
-          //         color: Colors.black, fontSize: 22, fontWeight: FontWeight.bold),
-          //     iconTheme: IconThemeData(color: Colors.black)),
-          // primaryColor: const Color(0xff6c755),
-          // scaffoldBackgroundColor: Colors.white,
-          ),
+      theme: ThemeData(),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -49,7 +41,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => const Task1()));
                 },
-                child: const Text('課題1'))
+                child: const Text('課題1')),
+            TextButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Task2()));
+                },
+                child: const Text('課題2')),
           ],
         ),
       ),
