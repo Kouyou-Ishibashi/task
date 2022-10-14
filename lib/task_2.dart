@@ -24,7 +24,7 @@ class _Task2 extends State<Task2> {
   final controller1 = TextEditingController();
   final controller2 = TextEditingController();
 
-  // 計算式
+  // 計算式(割り算の時、どちらかが0だった場合は0.0を入れる)
   void calculation(String calculation) {
     setState(() {
       if (calculation == '+') {
@@ -34,7 +34,11 @@ class _Task2 extends State<Task2> {
       } else if (calculation == '×') {
         _result = (_number1 * _number2);
       } else {
-        _result = (_number1 / _number2);
+        if (_number1 == 0.0 || _number2 == 0.0) {
+          _result = 0.0;
+        } else {
+          _result = (_number1 / _number2);
+        }
       }
     });
   }
@@ -49,21 +53,17 @@ class _Task2 extends State<Task2> {
       body: Center(
         child: Column(children: [
           const SizedBox(
-            height: 20,
+            height: 30,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                padding: const EdgeInsets.only(left: 10),
+                margin: const EdgeInsets.only(left: 30),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
-                  border: Border.all(
-                    color: Colors.blueAccent,
-                    width: 3,
-                  ),
                 ),
-                width: 120,
+                width: 150,
                 child: TextField(
                   controller: controller1,
                   keyboardType: TextInputType.number,
@@ -71,30 +71,41 @@ class _Task2 extends State<Task2> {
                     FilteringTextInputFormatter.digitsOnly
                   ],
                   onChanged: (text) {
-                    _number1 = double.parse(text);
+                    if (text != '') {
+                      _number1 = double.parse(text);
+                    } else {
+                      _number2 = 0.0;
+                    }
                   },
+                  decoration:
+                      const InputDecoration(border: OutlineInputBorder()),
                 ),
               ),
               Container(
-                padding: const EdgeInsets.only(left: 10),
+                margin: const EdgeInsets.only(left: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
-                  border: Border.all(
-                    color: Colors.blueAccent,
-                    width: 3,
-                  ),
                 ),
-                width: 120,
+                width: 150,
                 child: TextField(
                   onChanged: (text) {
-                    _number2 = double.parse(text);
+                    if (text != '') {
+                      _number2 = double.parse(text);
+                    } else {
+                      _number2 = 0.0;
+                    }
                   },
                   controller: controller2,
                   keyboardType: TextInputType.number,
                   inputFormatters: <TextInputFormatter>[
                     FilteringTextInputFormatter.digitsOnly
                   ],
+                  decoration:
+                      const InputDecoration(border: OutlineInputBorder()),
                 ),
+              ),
+              const SizedBox(
+                width: 10,
               ),
               Text('結果:${_result.toStringAsFixed(1).toString()}'),
             ],
