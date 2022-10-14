@@ -49,6 +49,7 @@ class _Task2 extends State<Task2> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Calculator'),
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Column(children: [
@@ -56,14 +57,14 @@ class _Task2 extends State<Task2> {
             height: 30,
           ),
           Row(
-            // mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                margin: const EdgeInsets.only(left: 30),
+                margin: const EdgeInsets.only(left: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                 ),
-                width: 150,
+                width: 120,
                 child: TextField(
                   controller: controller1,
                   keyboardType: TextInputType.number,
@@ -86,7 +87,7 @@ class _Task2 extends State<Task2> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                 ),
-                width: 150,
+                width: 120,
                 child: TextField(
                   onChanged: (text) {
                     if (text != '') {
