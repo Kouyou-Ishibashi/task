@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_task/task_1.dart';
 import 'package:flutter_task/task_2.dart';
+import 'package:flutter_task/task_3/task_3_1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,6 +49,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(builder: (context) => const Task2()));
                 },
                 child: const Text('課題2')),
+            TextButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Task3_1()));
+                },
+                child: const Text('課題3')),
           ],
         ),
       ),
