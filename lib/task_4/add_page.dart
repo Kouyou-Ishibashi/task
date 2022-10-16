@@ -21,7 +21,7 @@ class AddPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 150,
+                  height: 100,
                 ),
                 SizedBox(
                   width: 300,
