@@ -35,7 +35,7 @@ class Task1 extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Container(
-                          margin: EdgeInsets.only(top: 20),
+                          margin: const EdgeInsets.only(top: 20),
                           width: 100,
                           child: Row(
                             children: [
