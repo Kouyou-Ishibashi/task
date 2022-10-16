@@ -1,9 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_task/task_1.dart';
 import 'package:flutter_task/task_2.dart';
 import 'package:flutter_task/task_3/task_3_1.dart';
+import 'package:flutter_task/task_4/signup_page.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -55,6 +59,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(builder: (context) => const Task3_1()));
                 },
                 child: const Text('課題3')),
+            TextButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => signUpPage()));
+                },
+                child: const Text('課題4')),
           ],
         ),
       ),
