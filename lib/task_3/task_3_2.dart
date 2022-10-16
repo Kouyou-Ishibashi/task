@@ -59,6 +59,7 @@ class _Task3_2 extends State<Task3_2> {
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 50, 50, 50),
         body: Center(
+            child: SingleChildScrollView(
           child: Column(children: [
             const SizedBox(
               height: 30,
@@ -183,6 +184,6 @@ class _Task3_2 extends State<Task3_2> {
               ],
             )
           ]),
-        ));
+        )));
   }
 }

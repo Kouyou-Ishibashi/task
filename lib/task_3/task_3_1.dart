@@ -94,146 +94,148 @@ class _Task3_1 extends State<Task3_1> {
             )
           ],
         ),
-        body: Column(
-          children: [
-            const SizedBox(
-              height: 15,
-            ),
-            Container(
-              margin: const EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
-                    'あなたへのおすすめ',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                  Icon(
-                    Icons.navigate_next,
-                    size: 30,
-                    color: Colors.white,
-                  ),
-                ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 15,
               ),
-            ),
-            SizedBox(
-              height: 210,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: music.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Task3_2(
-                                            image: music[index]['image'],
-                                            music: music[index]['music'],
-                                            name: music[index]['name'],
-                                          )));
-                            },
-                            child: Container(
-                              height: 150,
-                              width: 150,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Image.network(
-                                music[index]['image'],
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 150,
-                            child: Text(
-                              music[index]['music'],
-                              style: const TextStyle(color: Colors.white),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 150,
-                            child: Text(
-                              music[index]['name'],
-                              style: const TextStyle(color: Colors.grey),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
-                      ));
-                },
-              ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Container(
-              margin: const EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
-                    'カテゴリー',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                  Icon(
-                    Icons.navigate_next,
-                    size: 30,
-                    color: Colors.white,
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 210,
-              child: GridView.builder(
-                scrollDirection: Axis.horizontal,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 2 / 3,
+              Container(
+                margin: const EdgeInsets.all(10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      'あなたへのおすすめ',
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                    Icon(
+                      Icons.navigate_next,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                  ],
                 ),
-                itemCount: category.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                      margin: const EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: const Alignment(-1.0, -1.0),
-                          end: const Alignment(1.0, 1.0),
-                          colors: <Color>[
-                            color[index]['color1'],
-                            color[index]['color2'],
-                          ],
-                          stops: const [
-                            0,
-                            1,
-                          ],
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Center(
-                          child: Text(
-                        category[index],
-                        style: const TextStyle(
-                          fontSize: 15.0,
-                          color: Colors.white,
-                        ),
-                      )));
-                },
-                shrinkWrap: true,
               ),
-            ),
-            Row(
-              children: const [],
-            ),
-          ],
+              SizedBox(
+                height: 210,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: music.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Task3_2(
+                                              image: music[index]['image'],
+                                              music: music[index]['music'],
+                                              name: music[index]['name'],
+                                            )));
+                              },
+                              child: Container(
+                                height: 150,
+                                width: 150,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: Image.network(
+                                  music[index]['image'],
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 150,
+                              child: Text(
+                                music[index]['music'],
+                                style: const TextStyle(color: Colors.white),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 150,
+                              child: Text(
+                                music[index]['name'],
+                                style: const TextStyle(color: Colors.grey),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ));
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Container(
+                margin: const EdgeInsets.all(10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      'カテゴリー',
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                    Icon(
+                      Icons.navigate_next,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 210,
+                child: GridView.builder(
+                  scrollDirection: Axis.horizontal,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 2 / 3,
+                  ),
+                  itemCount: category.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                        margin: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: const Alignment(-1.0, -1.0),
+                            end: const Alignment(1.0, 1.0),
+                            colors: <Color>[
+                              color[index]['color1'],
+                              color[index]['color2'],
+                            ],
+                            stops: const [
+                              0,
+                              1,
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                            child: Text(
+                          category[index],
+                          style: const TextStyle(
+                            fontSize: 15.0,
+                            color: Colors.white,
+                          ),
+                        )));
+                  },
+                  shrinkWrap: true,
+                ),
+              ),
+              Row(
+                children: const [],
+              ),
+            ],
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Colors.white,
