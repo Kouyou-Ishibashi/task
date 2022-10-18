@@ -4,6 +4,7 @@ import 'package:flutter_task/task_1.dart';
 import 'package:flutter_task/task_2.dart';
 import 'package:flutter_task/task_3/task_3_1.dart';
 import 'package:flutter_task/task_4/signup_page.dart';
+import 'package:flutter_task/task_5/animallist.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -65,6 +66,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(builder: (context) => signUpPage()));
                 },
                 child: const Text('課題4')),
+            TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AnimalListPage()));
+                },
+                child: const Text('課題5')),
           ],
         ),
       ),
