@@ -5,6 +5,7 @@ import 'package:flutter_task/task_2.dart';
 import 'package:flutter_task/task_3/task_3_1.dart';
 import 'package:flutter_task/task_4/signup_page.dart';
 import 'package:flutter_task/task_5/animallist.dart';
+import 'package:flutter_task/task_6/todolistpage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -74,6 +75,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context) => const AnimalListPage()));
                 },
                 child: const Text('課題5')),
+            TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const TodoListPage()));
+                },
+                child: const Text('課題6')),
           ],
         ),
       ),
