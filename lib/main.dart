@@ -6,6 +6,7 @@ import 'package:flutter_task/task_3/task_3_1.dart';
 import 'package:flutter_task/task_4/signup_page.dart';
 import 'package:flutter_task/task_5/animallist.dart';
 import 'package:flutter_task/task_6/todolistpage.dart';
+import 'package:flutter_task/task_7/listpage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -83,6 +84,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context) => const TodoListPage()));
                 },
                 child: const Text('課題6')),
+            TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ListPage()));
+                },
+                child: const Text('課題7')),
           ],
         ),
       ),
